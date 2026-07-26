@@ -32,7 +32,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Compile, test, and build JAR
-        run: ./gradlew build --no-daemon --stacktrace
+        run: ./gradlew build --no-daemon --stacktrace --info --refresh-dependencies --console=plain
 
       - name: Upload built JAR
         uses: actions/upload-artifact@v4
