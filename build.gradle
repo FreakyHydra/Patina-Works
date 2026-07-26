@@ -94,6 +94,14 @@ runs {
     }
 }
 
+// Force the client classpath to regenerate every time (stops NoSuchFileException crashes on runClient)
+tasks.whenTaskAdded { task ->
+    if (task.name == 'writeMinecraftClasspathClient') {
+        task.outputs.upToDateWhen { false }
+        task.outputs.cacheIf { false }
+    }
+}
+
 // Sets up a dependency configuration called 'localRuntime'.
 // This configuration should be used instead of 'runtimeOnly' to declare
 // a dependency that will be present for runtime testing but that is
