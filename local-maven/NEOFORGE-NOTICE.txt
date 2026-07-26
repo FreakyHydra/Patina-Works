@@ -1,0 +1,9 @@
+This directory contains NeoForge 21.1.244 build artifacts bundled temporarily
+so that clean GitHub Actions runners can resolve the mod's development
+dependency without downloading from Maven.
+
+NeoForge is licensed under LGPL-2.1.
+Source repository: https://github.com/neoforged/NeoForge
+
+These files are required only at build time and are not part of the mod's
+distribution artifact.
