@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "patinaworks:block/copper_tank_bottom"
+    },
+    "half=upper": {
+      "model": "patinaworks:block/copper_tank_top"
+    }
+  }
+}
