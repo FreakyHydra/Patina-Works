@@ -4,5 +4,12 @@
   "item.patinaworks.copper_plate": "Copper Plate",
   "item.patinaworks.copper_gear": "Copper Gear",
   "item.patinaworks.copper_rivet": "Copper Rivet",
-  "item.patinaworks.engineers_hammer": "Engineer's Hammer"
+  "item.patinaworks.engineers_hammer": "Engineer's Hammer",
+  "item.patinaworks.patina_ledger": "Patina Ledger",
+  "gui.patinaworks.recipe_index": "Recipe Index",
+  "gui.patinaworks.search": "Search",
+  "gui.patinaworks.prev_recipe": "Previous Recipe",
+  "gui.patinaworks.next_recipe": "Next Recipe",
+  "gui.patinaworks.no_recipes": "No Recipes Found",
+  "gui.patinaworks.unsupported_recipe": "Unsupported Recipe"
 }

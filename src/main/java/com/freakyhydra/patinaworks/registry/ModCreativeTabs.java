@@ -19,6 +19,7 @@ public class ModCreativeTabs {
                 output.accept(new ItemStack(ModItems.COPPER_GEAR.get()));
                 output.accept(new ItemStack(ModItems.COPPER_RIVET.get()));
                 output.accept(new ItemStack(ModItems.ENGINEERS_HAMMER.get()));
+                output.accept(new ItemStack(ModItems.PATINA_LEDGER.get()));
             })
             .build());
 }
