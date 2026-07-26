@@ -1,5 +1,6 @@
 package com.freakyhydra.patinaworks;
 
+import com.freakyhydra.patinaworks.block.entity.ModBlockEntities;
 import com.freakyhydra.patinaworks.registry.ModBlocks;
 import com.freakyhydra.patinaworks.registry.ModCreativeTabs;
 import com.freakyhydra.patinaworks.registry.ModItems;
@@ -13,6 +14,7 @@ public class PatinaWorks {
     public PatinaWorks(IEventBus modEventBus) {
         ModItems.ITEMS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
+        ModBlockEntities.BLOCK_ENTITIES.register(modEventBus);
         ModCreativeTabs.CREATIVE_MODE_TABS.register(modEventBus);
     }
 }
