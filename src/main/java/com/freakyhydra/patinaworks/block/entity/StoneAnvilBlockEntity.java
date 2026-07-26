@@ -7,6 +7,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -24,7 +25,7 @@ public class StoneAnvilBlockEntity extends BlockEntity {
 
     public void setInputStack(ItemStack stack) {
         this.inputStack = stack;
-        setChanged();
+        sync();
     }
 
     public int getStrikeProgress() {
@@ -33,12 +34,19 @@ public class StoneAnvilBlockEntity extends BlockEntity {
 
     public void incrementStrikeProgress() {
         this.strikeProgress++;
-        setChanged();
+        sync();
     }
 
     public void resetProgress() {
         this.strikeProgress = 0;
+        sync();
+    }
+
+    private void sync() {
         setChanged();
+        if (level != null && !level.isClientSide) {
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_CLIENTS);
+        }
     }
 
     @Override

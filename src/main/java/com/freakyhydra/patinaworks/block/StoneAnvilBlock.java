@@ -43,15 +43,13 @@ public class StoneAnvilBlock extends Block implements EntityBlock {
             return InteractionResult.PASS;
         }
         if (!level.isClientSide) {
+            ItemStack copy = stored.copy();
             be.setInputStack(ItemStack.EMPTY);
             be.resetProgress();
             level.playSound(null, pos, SoundEvents.ITEM_PICKUP, SoundSource.BLOCKS, 0.4f, 1.0f);
-            if (!player.isCreative()) {
-                if (!player.getInventory().add(stored)) {
-                    level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 1.5, pos.getZ() + 0.5, stored));
-                }
+            if (!player.getInventory().add(copy)) {
+                level.addFreshEntity(new ItemEntity(level, pos.getX() + 0.5, pos.getY() + 1.5, pos.getZ() + 0.5, copy));
             }
-            be.setChanged();
         }
         return InteractionResult.SUCCESS;
     }
