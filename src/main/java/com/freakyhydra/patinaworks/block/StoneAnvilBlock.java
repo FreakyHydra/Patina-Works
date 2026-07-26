@@ -11,6 +11,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemInteractionResult;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
@@ -56,16 +57,16 @@ public class StoneAnvilBlock extends Block implements EntityBlock {
     }
 
     @Override
-    protected InteractionResult useItemOn(ItemStack heldItem, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
+    protected ItemInteractionResult useItemOn(ItemStack heldItem, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (!(level.getBlockEntity(pos) instanceof StoneAnvilBlockEntity be)) {
-            return InteractionResult.PASS;
+            return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
         }
         ItemStack stored = be.getInputStack();
 
         // Engineer's Hammer → strike
         if (heldItem.is(ModItems.ENGINEERS_HAMMER.get())) {
             if (stored.isEmpty() || !stored.is(Items.COPPER_INGOT)) {
-                return InteractionResult.PASS;
+                return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
             }
             if (!level.isClientSide) {
                 be.incrementStrikeProgress();
@@ -81,13 +82,13 @@ public class StoneAnvilBlock extends Block implements EntityBlock {
                 }
                 be.setChanged();
             }
-            return InteractionResult.SUCCESS;
+            return ItemInteractionResult.SUCCESS;
         }
 
         // Copper Ingot → place on anvil
         if (heldItem.is(Items.COPPER_INGOT)) {
             if (!stored.isEmpty()) {
-                return InteractionResult.PASS;
+                return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
             }
             if (!level.isClientSide) {
                 be.setInputStack(new ItemStack(Items.COPPER_INGOT));
@@ -98,9 +99,9 @@ public class StoneAnvilBlock extends Block implements EntityBlock {
                 }
                 be.setChanged();
             }
-            return InteractionResult.SUCCESS;
+            return ItemInteractionResult.SUCCESS;
         }
 
-        return InteractionResult.PASS;
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
     }
 }
