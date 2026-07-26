@@ -11,6 +11,8 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class CopperTankBlock extends Block {
     public static final int CAPACITY_BUCKETS = 10;
 
+    private static final VoxelShape SHAPE = Block.box(2, 0, 2, 14, 16, 14);
+
     public CopperTankBlock(Properties properties) {
         super(properties);
     }
@@ -22,6 +24,11 @@ public class CopperTankBlock extends Block {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return Block.box(0, 0, 0, 16, 16, 16);
+        return SHAPE;
+    }
+
+    @Override
+    protected VoxelShape getCollisionShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        return SHAPE;
     }
 }
