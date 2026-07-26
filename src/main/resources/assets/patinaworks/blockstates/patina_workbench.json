@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "patinaworks:block/patina_workbench"
+    }
+  }
+}
