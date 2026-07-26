@@ -1,0 +1,52 @@
+PATINA WORKS — GITHUB ACTIONS SETUP
+
+1. Copy the included .github folder into:
+   C:\Projects\Patina-Works
+
+   Final paths:
+   C:\Projects\Patina-Works\.github\workflows\build.yml
+   C:\Projects\Patina-Works\.github\workflows\publish.yml
+
+2. Commit and push:
+   git add .github
+   git commit -m "Add automated build and release workflows"
+   git push
+
+3. Create a Patina Works project on Modrinth and CurseForge.
+   Record:
+   - Modrinth project ID
+   - CurseForge numeric project ID
+
+4. GitHub repository:
+   Settings > Secrets and variables > Actions
+
+   Add repository secrets:
+   - MODRINTH_TOKEN
+   - CURSEFORGE_TOKEN
+
+   Add repository variables:
+   - MODRINTH_PROJECT_ID
+   - CURSEFORGE_PROJECT_ID
+
+   Never put tokens directly in the YAML files.
+
+5. Normal pushes:
+   GitHub automatically compiles the mod, runs normal Gradle tests,
+   builds the JAR, and stores it under the workflow run's Artifacts section.
+
+6. Publishing:
+   - Update mod_version in gradle.properties.
+   - Commit and push the version change.
+   - Open GitHub > Releases > Draft a new release.
+   - Create a tag such as v0.1.0-alpha.1.
+   - Write the release notes.
+   - Publish the release.
+
+   GitHub will build the JAR and upload it to:
+   - the GitHub Release
+   - Modrinth
+   - CurseForge
+
+NOTE:
+The publishing workflow is fixed to version-type: alpha while Patina Works
+is in early development. Change it later to beta or release.
