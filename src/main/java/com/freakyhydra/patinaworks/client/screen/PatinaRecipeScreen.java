@@ -57,6 +57,10 @@ public class PatinaRecipeScreen extends Screen {
     }
 
     @Override
+    public void renderBackground(GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTick) {
+    }
+
+    @Override
     protected void init() {
         leftPos = (width - PANEL_W) / 2;
         topPos = (height - PANEL_H) / 2;

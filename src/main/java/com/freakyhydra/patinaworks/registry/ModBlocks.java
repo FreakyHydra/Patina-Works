@@ -1,5 +1,6 @@
 package com.freakyhydra.patinaworks.registry;
 
+import com.freakyhydra.patinaworks.block.CopperTankBlock;
 import com.freakyhydra.patinaworks.block.StoneAnvilBlock;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
@@ -23,7 +24,15 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE)));
 
+    public static final DeferredBlock<Block> COPPER_TANK = BLOCKS.register("copper_tank",
+            () -> new CopperTankBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.IRON_BLOCK)
+                    .strength(5.0f, 6.0f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)));
+
     public static final DeferredItem<BlockItem> PATINA_WORKBENCH_ITEM = ModItems.ITEMS.registerSimpleBlockItem("patina_workbench", PATINA_WORKBENCH);
 
     public static final DeferredItem<BlockItem> STONE_ANVIL_ITEM = ModItems.ITEMS.registerSimpleBlockItem("stone_anvil", STONE_ANVIL);
+
+    public static final DeferredItem<BlockItem> COPPER_TANK_ITEM = ModItems.ITEMS.registerSimpleBlockItem("copper_tank", COPPER_TANK);
 }

@@ -16,6 +16,7 @@ public class ModCreativeTabs {
             .displayItems((parameters, output) -> {
                 output.accept(new ItemStack(ModBlocks.PATINA_WORKBENCH.get()));
                 output.accept(new ItemStack(ModBlocks.STONE_ANVIL.get()));
+                output.accept(new ItemStack(ModBlocks.COPPER_TANK.get()));
                 output.accept(new ItemStack(ModItems.COPPER_PLATE.get()));
                 output.accept(new ItemStack(ModItems.COPPER_GEAR.get()));
                 output.accept(new ItemStack(ModItems.COPPER_RIVET.get()));
