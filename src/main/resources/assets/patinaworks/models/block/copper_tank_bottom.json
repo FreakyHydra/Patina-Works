@@ -1,5 +1,5 @@
 {
-    "render_type": "minecraft:translucent",
+    "render_type":  "minecraft:translucent",
     "display":  {
 
                 },
@@ -14,7 +14,7 @@
                                   ],
                          "to":  [
                                     2,
-                                    16,
+                                    16.02,
                                     2
                                 ],
                          "faces":  {
@@ -83,7 +83,7 @@
                                   ],
                          "to":  [
                                     16,
-                                    16,
+                                    16.02,
                                     2
                                 ],
                          "rotation":  {
@@ -161,7 +161,7 @@
                                   ],
                          "to":  [
                                     2,
-                                    16,
+                                    16.02,
                                     16
                                 ],
                          "rotation":  {
@@ -239,7 +239,7 @@
                                   ],
                          "to":  [
                                     16,
-                                    16,
+                                    16.02,
                                     16
                                 ],
                          "rotation":  {
