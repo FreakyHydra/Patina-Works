@@ -1,5 +1,6 @@
 package com.freakyhydra.patinaworks.registry;
 
+import com.freakyhydra.patinaworks.block.CopperSteamBoilerBlock;
 import com.freakyhydra.patinaworks.block.CopperTankBlock;
 import com.freakyhydra.patinaworks.block.StoneAnvilBlock;
 import net.minecraft.world.item.BlockItem;
@@ -33,6 +34,15 @@ public class ModBlocks {
     public static final DeferredItem<BlockItem> PATINA_WORKBENCH_ITEM = ModItems.ITEMS.registerSimpleBlockItem("patina_workbench", PATINA_WORKBENCH);
 
     public static final DeferredItem<BlockItem> STONE_ANVIL_ITEM = ModItems.ITEMS.registerSimpleBlockItem("stone_anvil", STONE_ANVIL);
+
+    public static final DeferredBlock<CopperSteamBoilerBlock> COPPER_STEAM_BOILER = BLOCKS.register("copper_steam_boiler",
+            () -> new CopperSteamBoilerBlock(BlockBehaviour.Properties.of()
+                    .strength(3.5F, 8.0F)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.COPPER)
+                    .lightLevel(state -> state.getValue(CopperSteamBoilerBlock.LIT) ? 3 : 0)));
+
+    public static final DeferredItem<BlockItem> COPPER_STEAM_BOILER_ITEM = ModItems.ITEMS.registerSimpleBlockItem("copper_steam_boiler", COPPER_STEAM_BOILER);
 
     public static final DeferredItem<BlockItem> COPPER_TANK_ITEM = ModItems.ITEMS.registerSimpleBlockItem("copper_tank", COPPER_TANK);
 }

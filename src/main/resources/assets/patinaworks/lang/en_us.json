@@ -13,5 +13,25 @@
   "gui.patinaworks.prev_recipe": "Previous Recipe",
   "gui.patinaworks.next_recipe": "Next Recipe",
   "gui.patinaworks.no_recipes": "No Recipes Found",
-  "gui.patinaworks.unsupported_recipe": "Unsupported Recipe"
+  "gui.patinaworks.unsupported_recipe": "Unsupported Recipe",
+
+  "block.patinaworks.copper_steam_boiler": "Riveted Copper Steam Boiler",
+
+  "tooltip.patinaworks.copper_steam_boiler.1": "Bucket-fed early steam boiler",
+  "tooltip.patinaworks.copper_steam_boiler.2": "Leave headspace for usable steam pressure",
+  "tooltip.patinaworks.copper_steam_boiler.3": "Never refill while dry and overheated",
+
+  "message.patinaworks.boiler_status": "Water: %s%% | Pressure: %s kPa | Heat: %s C | %s",
+  "message.patinaworks.boiler_full": "The boiler cannot hold another bucket.",
+  "message.patinaworks.boiler_flash_steam": "FLASH STEAM! The overheated boiler may rupture!",
+  "message.patinaworks.boiler_bucket_unsafe": "It is too hot or pressurized to drain safely.",
+  "message.patinaworks.boiler_fuel_full": "The firebox is already packed with fuel.",
+
+  "state.patinaworks.boiler.cold": "Cold",
+  "state.patinaworks.boiler.heating": "Heating",
+  "state.patinaworks.boiler.ready": "Ready",
+  "state.patinaworks.boiler.overfilled": "Overfilled / wet steam",
+  "state.patinaworks.boiler.low_water": "Low water",
+  "state.patinaworks.boiler.dry_overheated": "Dry and overheated",
+  "state.patinaworks.boiler.critical": "Critical"
 }
